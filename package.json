@@ -5,17 +5,6 @@
   "repository": "https://github.com/brunoredes/node-clean-architeture.git",
   "author": "brunoredes <bruno.donatelli@etec.sp.gov.br>",
   "license": "MIT",
-  "lint-staged": {
-    "*.js": [
-      "standard --fix",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "devDependencies": {
     "husky": "^4.3.8",
     "jest": "^26.6.3",
