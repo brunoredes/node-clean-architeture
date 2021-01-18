@@ -1,0 +1,11 @@
+{
+  "name": "node-clean-architeture",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/brunoredes/node-clean-architeture.git",
+  "author": "brunoredes <bruno.donatelli@etec.sp.gov.br>",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^16.0.3"
+  }
+}
