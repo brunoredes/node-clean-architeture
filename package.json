@@ -11,7 +11,10 @@
     "lint-staged": "^10.5.3",
     "standard": "^16.0.3"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.14"
+  },
   "scripts": {
     "test": "jest"
   }
