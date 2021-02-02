@@ -16,7 +16,8 @@
     "mongoose": "^5.11.14"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --watchAll",
+    "test:staged": "jest"
   },
   "standard": {
     "env": ["jest"]
