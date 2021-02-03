@@ -17,8 +17,8 @@
     "mongoose": "^5.11.14"
   },
   "scripts": {
-    "test": "jest --watchAll",
-    "test:staged": "jest"
+    "test": "jest --watch --silent --colors --noStackTrace",
+    "test:staged": "jest --passwWithNoTests --findRelatedTests --silent --noStackTrace"
   },
   "standard": {
     "env": [
