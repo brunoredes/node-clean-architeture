@@ -20,7 +20,7 @@ const makeSut = () => {
 
 describe('Login Router', () => {
   describe('Client side Login Router', () => {
-    test('Should return status 400 if no email is provided', () => {
+    test('Should return status code 400 if no email is provided', () => {
       const { sut } = makeSut()
       const httpRequest = {
         body: {
@@ -33,7 +33,7 @@ describe('Login Router', () => {
       expect(httpResponse.body).toEqual(new MissingParamError('email'))
     })
 
-    test('Should return status 400 if no password is provided', () => {
+    test('Should return status code 400 if no password is provided', () => {
       const { sut } = makeSut()
       const httpRequest = {
         body: {
@@ -48,13 +48,13 @@ describe('Login Router', () => {
   })
 
   describe('Login Router Server Error', () => {
-    test('Should return status 500 if no httpRequest is provided', () => {
+    test('Should return status code 500 if no httpRequest is provided', () => {
       const { sut } = makeSut()
       const httpResponse = sut.route()
       expect(httpResponse.statusCode).toBe(500)
     })
 
-    test('Should return status 500 if no httpRequest has no body', () => {
+    test('Should return status code 500 if no httpRequest has no body', () => {
       const { sut } = makeSut()
       const httpRequest = {}
       const httpResponse = sut.route(httpRequest)
@@ -76,7 +76,7 @@ describe('Login Router', () => {
       expect(authUseCaseSpy.password).toBe(httpRequest.body.password)
     })
 
-    test('Should return 401 when invalid credentials are provided', () => {
+    test('Should return status code 401 when invalid credentials are provided', () => {
       const { sut } = makeSut()
       const httpRequest = {
         body: {
@@ -88,5 +88,17 @@ describe('Login Router', () => {
       expect(httpResponse.statusCode).toBe(401)
       expect(httpResponse.body).toEqual(new UnauthorizedError())
     })
+  })
+
+  test('Should return status code 500 if AuthUseCase has no auth method', () => {
+    const sut = new LoginRouter({})
+    const httpRequest = {
+      body: {
+        email: 'any_email@mail.com',
+        password: 'any_password'
+      }
+    }
+    const httpResponse = sut.route(httpRequest)
+    expect(httpResponse.statusCode).toBe(500)
   })
 })
