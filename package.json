@@ -18,7 +18,8 @@
   },
   "scripts": {
     "test": "jest --watch --silent --colors --noStackTrace",
-    "test:staged": "jest --passwWithNoTests --findRelatedTests --silent --noStackTrace"
+    "test:staged": "jest --passwWithNoTests --findRelatedTests --silent --noStackTrace",
+    "test:ci": "jest --coverage"
   },
   "standard": {
     "env": [
