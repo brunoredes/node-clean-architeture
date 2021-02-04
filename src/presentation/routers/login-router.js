@@ -29,7 +29,7 @@ module.exports = class LoginRouter {
       }
       return HttpResponse.ok({ accessToken })
     } catch (err) {
-      // console.error(err)
+      console.error(new Error(err))
       return HttpResponse.serverError()
     }
   }
