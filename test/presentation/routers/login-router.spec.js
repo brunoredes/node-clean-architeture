@@ -1,9 +1,9 @@
 'use strict'
 const LoginRouter = require('../../../src/presentation/routers/login-router')
-const MissingParamError = require('../../../src/presentation/helpers/missing-param-error')
-const UnauthorizedError = require('../../../src/presentation/helpers/unauthorized-error')
-const InvalidParamError = require('../../../src/presentation/helpers/invalid-param-error')
-const ServerError = require('../../../src/presentation/helpers/server-error')
+const {
+  MissingParamError, UnauthorizedError,
+  InvalidParamError, ServerError
+} = require('../../../src/presentation/errors')
 
 const makeSut = () => {
   const authUseCaseSpy = makeAuthUseCaseSpy()

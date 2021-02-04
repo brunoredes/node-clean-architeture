@@ -1,7 +1,6 @@
 'use strict'
 const HttpResponse = require('../helpers/http-response')
-const InvalidParamError = require('../helpers/invalid-param-error')
-const MissingParamError = require('../helpers/missing-param-error')
+const { InvalidParamError, MissingParamError } = require('../errors')
 module.exports = class LoginRouter {
   constructor (authUseCaseInstance, emailValidator) {
     this.authUseCase = authUseCaseInstance
