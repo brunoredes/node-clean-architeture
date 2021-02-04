@@ -14,12 +14,13 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.11.14"
+    "mongoose": "^5.11.14",
+    "validator": "^13.5.2"
   },
   "scripts": {
     "test": "jest --silent --colors --noStackTrace --passWithNoTests",
-    "test:unit":"npm test -- --watch -c jest-unit-config.js",
-    "test:integration":"npm test -- --watch -c jest-integration-config.js",
+    "test:unit": "npm test -- --watch -c jest-unit-config.js",
+    "test:integration": "npm test -- --watch -c jest-integration-config.js",
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage "
   },
